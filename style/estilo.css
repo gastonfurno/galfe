@@ -11,6 +11,7 @@ body {
     --bg-color: #0b0e14;
     --text-color: #fff;
     --btn-color: rgba(250, 245, 245, 0.404);
+    --bg-contenedor: rgba(255, 255, 255, 0.04);
 }
 
 .header {
@@ -153,46 +154,51 @@ cursor: pointer;
 
 /* --------MAIN-------- */
 
-.titulo-principal {
+.titulo-principal, p {
   text-align: center;
   color: var(--text-color);
-  padding: 20px;
 }
 
 .main-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 10px;
-  width: 80%;
-  margin: auto;  
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   padding: 10px;
-  box-shadow: 0 10px 30px rgba(250, 245, 245, 0.048);
-  border-radius: 15px;
-  border: 1.5px solid rgba(250, 245, 245, 0.404);
-}
-
-.main-producto {
-  max-width: 350px;
-  min-height: 400px;
-  display: flex;
-  color: var(--text-color);
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 5px;
-  align-items: center;
+  max-width: 90%;
   margin: auto;
 }
 
-.main-producto img {
-  width: 100%;
-  max-height: 180px;
+.main-home {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  max-height: 300px;
+  background: var(--bg-contenedor);
+  color: var(--text-color);
+  overflow: hidden;
+  border-radius: 5px;
+  padding-right: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-home:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(250, 245, 245, 0.404);
+}
+
+.main-home img {
+  width: 50%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-right: 10px;
   object-fit: contain;
 }
 
-.main-descripcion-producto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.main-descripcion-home h4 {
+  font-size: 1.5rem;
 }
 
 /*--------Footer-------- */
@@ -244,7 +250,7 @@ cursor: pointer;
 }
 
 .productos {
-background: rgba(255, 255, 255, 0.04);
+background: var(--bg-contenedor);
 display: flex;
 flex-direction: column;
 min-width: 300px;
@@ -304,7 +310,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servicio {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-contenedor);
   border-radius: 14px;
   padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -411,4 +417,60 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
   .nosotros-imagen img {
     max-height: 300px;
   }
+}
+
+/*-------- Contacto --------*/
+.form {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.form__form {
+    flex: 1;
+    padding: 12px;
+    max-width: 600px;
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+}
+
+.form__input-container :is(input,textarea) {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 4px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    box-shadow: 2px 2px 4px #0003;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.form__input-container textarea {
+    resize: none;
+    min-height: 120px;
+    font-family: inherit;
+    color: #fff;
+}
+
+.form__input-container input[type="submit"] {
+    padding: 12px;
+    background-color: #fff;
+    color:#18233f;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.form__title {
+    font-size: 3rem;
+    color: #fff;
 }
