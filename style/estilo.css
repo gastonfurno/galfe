@@ -159,6 +159,7 @@ cursor: pointer;
   color: var(--text-color);
 }
 
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -170,9 +171,8 @@ cursor: pointer;
 
 .main-home {
   display: flex;
-  align-items: center;
-  text-align: center;
-  max-height: 300px;
+  align-items: stretch;
+  height: 300px;
   background: var(--bg-contenedor);
   color: var(--text-color);
   overflow: hidden;
@@ -189,16 +189,33 @@ cursor: pointer;
 
 .main-home img {
   width: 50%;
-  object-fit: cover;
+  height: 100%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding-right: 10px;
-  object-fit: contain;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.main-descripcion-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 
 .main-descripcion-home h4 {
   font-size: 1.5rem;
+}
+
+.main-descripcion-home a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.main-descripcion-home a:hover {
+  color: var(--btn-color);
 }
 
 /*--------Footer-------- */
