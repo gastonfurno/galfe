@@ -16,11 +16,14 @@ body {
 
 .header {
   display: flex;
+  max-width: 90%;
   padding: 0 5px;
+  margin: auto;
   justify-content: space-between;
   align-items: center;
   color: var(--text-color);
   max-height: 300px;
+  border-bottom: 1px solid rgba(250, 245, 245, 0.404);
 }
 
 .header img {
@@ -222,13 +225,14 @@ cursor: pointer;
 
 .footer-container {
   display: flex;
+  max-width: 90%;
   flex-direction: row;
   min-height: 30dvh;
   color: var(--text-color);
-  width: 90%;
   justify-content: space-evenly;
   margin: 10px auto;
   padding: 10px;
+  border-top: 1px solid rgba(250, 245, 245, 0.404);
 }
 
 .redes-sociales-footer, .contacto-footer, .normas-footer {
@@ -327,6 +331,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servicio {
+ text-align: center;
   background: var(--bg-contenedor);
   border-radius: 14px;
   padding: 25px;
@@ -411,18 +416,6 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 16px;
 }
 
-.footer-container-nosotros {
-  display: flex;
-  flex-direction: row;
-  min-height: 30dvh;
-  color: var(--text-color);
-  width: 90%;
-  justify-content: space-evenly;
-  margin: 10px auto;
-  padding: 10px;
-  border-top: 1px solid rgba(250, 245, 245, 0.404);
-}
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -459,7 +452,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
 }
 
-.form__input-container :is(input,textarea) {
+.form__input-container :is(input:not([type="submit"]), textarea) {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -479,12 +472,18 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #fff;
 }
 
-.form__input-container input[type="submit"] {
+.form__input-container .btn-producto-form {
     padding: 12px;
     background-color: #fff;
-    color:#18233f;
+    color: #18233f;
     border-radius: 8px;
     font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.form__input-container .btn-producto-form:hover {
+    background-color: #dcdcdc;
 }
 
 .form__title {
