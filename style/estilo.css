@@ -8,7 +8,7 @@ body {
     background-color: var(--bg-color);
     font-family:'Montserrat', sans-serif;
 
-    --bg-color: #0b0e14;
+    --bg-color: #0b0e16;
     --text-color: #fff;
     --btn-color: rgba(250, 245, 245, 0.404);
     --bg-contenedor: rgba(255, 255, 255, 0.04);
