@@ -38,6 +38,15 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+
+  .header img {
+    height: 120px;
+  }
+
+}
+
+/* --------MENU-------- */
 .bar-nav-ul {
   display: flex;
 }
@@ -55,6 +64,50 @@ a {
 .bar-nav-item a:hover {
 color: var(--btn-color);
 cursor: pointer;
+}
+
+.menu-toggle {
+  display: none; 
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .bar-nav-ul {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    background: var(--bg-color);
+
+    flex-direction: column;
+    align-items: center;
+
+    display: none;
+    padding: 20px 0;
+  }
+
+  .bar-nav-ul.active {
+    display: flex;
+  }
+
+  .bar-nav-item {
+    padding: 15px 0;
+    font-size: 1.3rem;
+  }
 }
 
 /* --------CARRUSEL-------- */
@@ -142,22 +195,17 @@ cursor: pointer;
 .prev { left: 15px; }
 .next { right: 15px; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .slide {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .slide img,
-  .text {
-    width: 100%;
+@media (max-width: 768px) {
+  .carousel {
+    display: none;
   }
 }
 
 /* --------MAIN-------- */
 
-.titulo-principal, p {
+.titulo-principal, 
+p {
   text-align: center;
   color: var(--text-color);
 }
@@ -206,7 +254,6 @@ cursor: pointer;
   flex-direction: column;
 }
 
-
 .main-descripcion-home h4 {
   font-size: 1.5rem;
 }
@@ -219,6 +266,21 @@ cursor: pointer;
 
 .main-descripcion-home a:hover {
   color: var(--btn-color);
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-home {
+    height: 100px;
+  }
+  
+  .main-descripcion-home p {
+    display: none;
+  }
 }
 
 /*--------Footer-------- */
@@ -258,6 +320,24 @@ cursor: pointer;
   border-right: 1.5px solid rgba(250, 245, 245, 0.404);
 }
 
+@media (max-width: 768px) {
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .redes-sociales-footer,
+  .contacto-footer,
+  .normas-footer {
+
+    width: 100%;
+    border: none;
+    margin-bottom: 10px;
+  }
+
+}
 
 /*-------- PRODUCTOS --------*/
 .productos-contenedor {
@@ -417,7 +497,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .nosotros-container {
     grid-template-columns: 1fr;
